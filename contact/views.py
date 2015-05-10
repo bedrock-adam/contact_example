@@ -17,12 +17,12 @@ def create(request):
         message = form.cleaned_data['message']
         sender = form.cleaned_data['sender']
 
-        email = EmailMessage(subject, message, sender, ['adammikulas@gmail.com'])
-        email.send()
+        # email = EmailMessage(subject, message, sender, ['adammikulas@gmail.com'])
+        # email.send()
 
         return HttpResponseRedirect('/contact/thanks')
-    else:
-        render(request, 'form.html', { 'form': form })
+
+    return render(request, 'form.html', { 'form': form })
 
 def thanks(request):
     return render(request, 'thanks.html')
