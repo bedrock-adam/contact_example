@@ -1,5 +1,7 @@
+<h1>Contact Us</h1>
+
 <form action="/contact/" method="POST">
   {% csrf_token %}
-  {{ form }}
+  {{ form.as_p }}
   <input type="submit" value="Submit" />
 </form>
